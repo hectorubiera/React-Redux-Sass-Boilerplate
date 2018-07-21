@@ -1,0 +1,142 @@
+const webpack = require("webpack");
+const path = require("path");
+const webpackMerge = require("webpack-merge");
+const htmlWebPackPlugin = require("html-webpack-plugin");
+const autoPrefixer = require("autoprefixer");
+const miniCssExtractPlugin = require("mini-css-extract-plugin");
+const styleLintPlugin = require("stylelint-webpack-plugin");
+const cleanWebpackPlugin = require("clean-webpack-plugin");
+
+const webpackVariables = require("./webpack.variables");
+const webpackConfigFile = require(`./webpack.${process.env.MODE}`);
+
+module.exports = webpackMerge(webpackConfigFile, {
+    mode: process.env.MODE,
+    entry: [
+        `${webpackVariables.SOURCE_FOLDER}/app/index.js`
+    ],
+    output: {
+        path: webpackVariables.BUILD_FOLDER,
+        filename: process.env.MODE === "development" ?
+            `js/${webpackVariables.JS_FILE_NAME}.js` : `js/${webpackVariables.JS_FILE_NAME}.[hash:7].js`
+    },
+    module: {
+        rules: [{
+                // JS Linter
+                test: /\.(js|jsx)$/,
+                exclude: /node_modules/,
+                enforce: "pre",
+                use: [{
+                    loader: "eslint-loader",
+                    options: {
+                        fix: true,
+                        failOnWarning: process.env.MODE === "development" ?
+                            false : true,
+                        failOnError: process.env.MODE === "development" ?
+                            false : true
+                    }
+                }]
+            },
+            {
+                // JS Compiler
+                test: /\.(js|jsx)$/,
+                exclude: /node_modules/,
+                use: [{
+                    loader: "babel-loader"
+                }]
+            },
+            {
+                // SASS Compiler
+                test: /\.scss$/,
+                use: [
+                    process.env.MODE === "development" ?
+                    "style-loader" :
+                    miniCssExtractPlugin.loader,
+                    {
+                        loader: "css-loader",
+                        options: {
+                            sourceMap: true,
+                            minimize: process.env.MODE === "development" ? false : true
+                        }
+                    },
+                    {
+                        loader: "postcss-loader",
+                        options: {
+                            ident: "postcss",
+                            plugins: [
+                                autoPrefixer({
+                                    browsers: ["last 3 versions", "> 1%"]
+                                })
+                            ],
+                            sourceMap: true
+                        }
+                    },
+                    {
+                        loader: "sass-loader",
+                        options: {
+                            sourceMap: true,
+                            sourceMapContents: true
+                        }
+                    }
+                ]
+            },
+            {
+                // Fonts loader
+                test: /\.(ttf|eot|svg|woff2?)(\?v=[a-z0-9=\.]+)?$/i,
+                loader: "file-loader",
+                options: {
+                    name: process.env.MODE === "development" ?
+                        "css/fonts/[name].[ext]" : "css/fonts/[name].[hash:7].[ext]",
+                    publicPath(url) {
+
+                        return url.replace("css/", "");
+
+                    }
+                }
+            },
+            {
+                // Image loader
+                test: /\.(jpe?g|png|svg|gif|ico)$/i,
+                exclude: `${webpackVariables.SOURCE_FOLDER}/sass/fonts/`,
+                loader: "file-loader",
+                options: {
+                    name: process.env.MODE === "development" ?
+                        "[name].[ext]" : "[name].[hash:7].[ext]",
+                    outputPath: process.env.MODE === "development" ? "" : "images/",
+                    publicPath: "/"
+                }
+            },
+            {
+                // File loader
+                test: /\.(mp4|webm|ogg|mp3|wav|flac|aac)(\?.*)?$/,
+                loader: "url-loader",
+                options: {
+                    limit: 10000,
+                    name: process.env.MODE === "development" ?
+                        "media/[name].[ext]" : "media/[name].[hash:7].[ext]",
+                    outputPath: process.env.MODE === "development" ? "" : "media/",
+                    publicPath: "/"
+                }
+            }
+        ]
+    },
+    plugins: [
+        new cleanWebpackPlugin([webpackVariables.BUILD_FOLDER], {
+            root: path.resolve(__dirname, "..")
+        }),
+
+        new htmlWebPackPlugin({
+            inject: false,
+            template: require("html-webpack-template"),
+            appMountId: "main-app-wrapper"
+        }),
+
+        new styleLintPlugin({
+            configFile: path.resolve(__dirname, "..", ".stylelintrc"),
+            failOnError: process.env.MODE === "development" ? false : true
+        }),
+        new webpack.DefinePlugin({
+            _DEVTOOL: process.env.DEVTOOL
+        })
+    ]
+})

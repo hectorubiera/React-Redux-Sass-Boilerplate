@@ -1,0 +1,8 @@
+{
+    "presets": [
+        "env",
+        "react",
+        "es2015-ie",
+        "stage-2"
+    ]
+}
