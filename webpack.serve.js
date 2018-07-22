@@ -5,7 +5,7 @@ const serve = require("webpack-serve");
 // const history = require('connect-history-api-fallback');
 // const proxy = require('http-proxy-middleware');
 
-const webpackConfig = require("./webpack.base.config.js");
+const webpackConfig = require("./build-utils/webpack.base.config.js");
 
 let serverConfig = {
     host: "localhost",

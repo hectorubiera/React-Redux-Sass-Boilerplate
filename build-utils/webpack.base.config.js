@@ -30,8 +30,7 @@ module.exports = webpackMerge(webpackConfigFile, {
                     loader: "eslint-loader",
                     options: {
                         fix: true,
-                        failOnWarning: process.env.MODE === "development" ?
-                            false : true,
+                        failOnWarning: false,
                         failOnError: process.env.MODE === "development" ?
                             false : true
                     }
@@ -135,6 +134,11 @@ module.exports = webpackMerge(webpackConfigFile, {
             configFile: path.resolve(__dirname, "..", ".stylelintrc"),
             failOnError: process.env.MODE === "development" ? false : true
         }),
+
+        new miniCssExtractPlugin({
+            filename: `css/${webpackVariables.CSS_FILE_NAME}.[hash:7].css`
+        }),
+
         new webpack.DefinePlugin({
             _DEVTOOL: process.env.DEVTOOL
         })

@@ -1,0 +1,131 @@
+@import "../mixins/font-face";
+
+// Open Sans
+// Weight: light
+// Style: normal
+@include font-face (
+    "Open Sans",
+    "fonts/Open-Sans/OpenSans-Light",
+    $weight: 300,
+    $style: normal,
+    $exts: eot woff2 woff ttf svg);
+
+// Open Sans
+// Weight: light
+// Style: italic
+@include font-face (
+    "Open Sans",
+    "fonts/Open-Sans/OpenSansLight-Italic",
+    $weight: 300,
+    $style: italic,
+    $exts: eot woff2 woff ttf svg);
+
+// Open Sans
+// Weight: normal
+// Style: normal
+@include font-face (
+    "Open Sans",
+    "fonts/Open-Sans/OpenSans",
+    $weight: 500,
+    $style: normal,
+    $exts: eot woff2 woff ttf svg);
+
+// Open Sans
+// Weight: normal
+// Style: italic
+@include font-face (
+    "Open Sans",
+    "fonts/Open-Sans/OpenSans-Italic",
+    $weight: 500,
+    $style: italic,
+    $exts: eot woff2 woff ttf svg);
+
+// Open Sans
+// Weight: semi bold
+// Style: normal
+@include font-face (
+    "Open Sans",
+    "fonts/Open-Sans/OpenSans-Semibold",
+    $weight: 600,
+    $style: normal,
+    $exts: eot woff2 woff ttf svg);
+
+// Open Sans
+// Weight: semi bold
+// Style: italic
+@include font-face (
+    "Open Sans",
+    "fonts/Open-Sans/OpenSans-SemiboldItalic",
+    $weight: 600,
+    $style: italic,
+    $exts: eot woff2 woff ttf svg);
+
+// Open Sans
+// Weight: bold
+// Style: normal
+@include font-face (
+    "Open Sans",
+    "fonts/Open-Sans/OpenSans-Bold",
+    $weight: 700,
+    $style: normal,
+    $exts: eot woff2 woff ttf svg);
+
+// Open Sans
+// Weight: bold
+// Style: italic
+@include font-face (
+    "Open Sans",
+    "fonts/Open-Sans/OpenSans-BoldItalic",
+    $weight: 700,
+    $style: italic,
+    $exts: eot woff2 woff ttf svg);
+
+// Open Sans
+// Weight: extra bold
+// Style: normal
+@include font-face (
+    "Open Sans",
+    "fonts/Open-Sans/OpenSans-Extrabold",
+    $weight: 800,
+    $style: normal,
+    $exts: eot woff2 woff ttf svg);
+
+// Open Sans
+// Weight: extra bold
+// Style: italic
+@include font-face (
+    "Open Sans",
+    "fonts/Open-Sans/OpenSans-ExtraboldItalic",
+    $weight: 800,
+    $style: italic,
+    $exts: eot woff2 woff ttf svg);
+
+// Open Sans Condensed
+// Weight: light
+// Style: normal
+@include font-face (
+    "Open Sans Condensed",
+    "fonts/Open-Sans-Condensed/OpenSans-CondensedLight",
+    $weight: 300,
+    $style: normal,
+    $exts: eot woff2 woff ttf svg);
+
+// Open Sans Condensed
+// Weight: light
+// Style: italic
+@include font-face (
+    "Open Sans Condensed",
+    "fonts/Open-Sans-Condensed/OpenSans-CondensedLightItalic",
+    $weight: 300,
+    $style: italic,
+    $exts: eot woff2 woff ttf svg);
+
+// Open Sans Condensed
+// Weight: bold
+// Style: normal
+@include font-face (
+    "Open Sans Condensed",
+    "fonts/Open-Sans-Condensed/OpenSans-CondensedBold",
+    $weight: 700,
+    $style: normal,
+    $exts: eot woff2 woff ttf svg);

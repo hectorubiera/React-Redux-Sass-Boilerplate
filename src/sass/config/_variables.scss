@@ -1,0 +1,21 @@
+// === Colors ===
+@import "colors";
+
+// Media queries breakpoints
+// desktop width
+$tru-desktop-width: 1200px !default;
+$tru-desktop-min-width: 1024px !default;
+
+// tablet width
+$tru-tablet-width: ($tru-desktop-min-width - 1) !default;
+$tru-tablet-min-width: 768px !default;
+
+// mobile width
+$tru-mobile-width: ($tru-tablet-min-width - 1) !default;
+$tru-mobile-min-width: 0 !default;
+
+// Grid system
+// Number of columns in the grid.
+$tru-grid-columns: 12 !default;
+// Padding between columns. Gets divided in half for the left and right.
+$tru-grid-gutter-width: 40px !default;

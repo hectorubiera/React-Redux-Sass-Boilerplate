@@ -1,0 +1,59 @@
+@import "../config/variables";
+@import "../mixins/grid";
+@import "../mixins/clearfix";
+@import "../vendors/mq";
+
+.tru-grid-wrapper {
+    @include clearfix;
+}
+
+.tru-grid-row {
+    @include make-tru-grid-row;
+
+    // Outputs the row width for tablet view. Use tru-grid-tablet-row to accomplish this
+    // @param  {[type]} false [Stops the website from snapping back to the default width]
+    // @param  {[type]} $tru-desktop-min-width [desktop min width]
+    @include mq(false, $tru-desktop-min-width) {
+
+        &.tru-grid-tablet-row {
+            @include make-tru-grid-row(
+                $tru-max-width: $tru-tablet-width,
+                $tru-min-width: $tru-tablet-min-width
+            );
+        }
+    }
+
+    // Outputs the row width for mobile view. Use tru-grid-mobile-row to accomplish this
+    // @param  {[type]} false [Stops the website from snapping back to the default width]
+    // @param  {[type]} $tru-tablet-min-width [tablet min width]
+    @include mq(false, $tru-tablet-min-width) {
+
+        &.tru-grid-mobile-row {
+            @include make-tru-grid-row(
+                $tru-max-width: $tru-mobile-width,
+                $tru-min-width: $tru-mobile-min-width
+            );
+        }
+    }
+}
+
+// Outputs the columns initial setup
+@include make-tru-grid-columns;
+
+// Outputs the columns for desktop view
+// use class tru-grid-column-{1-12}
+@include make-tru-grid;
+
+// Outputs the columns for tablet view If a user wants to display
+// a different column width for tablet they can use class
+// tru-grid-column-tablet-{1-12}
+@include mq(false, $tru-desktop-min-width) {
+    @include make-tru-grid(tablet-);
+}
+
+// Outputs the columns for mobile view If a user wants to display
+// a different column width for mobile they can use class
+// tru-grid-column-mobile-{1-12}
+@include mq(false, $tru-tablet-min-width) {
+    @include make-tru-grid(mobile-);
+}
