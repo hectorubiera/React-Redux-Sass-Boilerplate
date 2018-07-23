@@ -6,7 +6,7 @@
   "scripts": {
     "serve": "MODE=development DEVTOOL=false node ./webpack.serve.js",
     "serve:devtool": "MODE=development DEVTOOL=true node ./webpack.serve.js",
-    "build": "MODE=production webpack --config ./build-utils/webpack.base.config.js"
+    "build": "MODE=production webpack --config ./build-utils/webpack.base.js"
   },
   "repository": {
     "type": "git",

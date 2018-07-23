@@ -1,5 +1,5 @@
-import React, { Component } from "react";
-import { Provider } from "react-redux";
+import React, {Component} from "react";
+import {Provider} from "react-redux";
 import PropTypes from "prop-types";
 
 import App from "../containers/App";
@@ -10,7 +10,7 @@ class Root extends Component {
 
     render() {
 
-        const { store } = this.props;
+        const {store} = this.props;
 
         return (
             <Provider store={store}>
