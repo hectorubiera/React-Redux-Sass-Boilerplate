@@ -11,19 +11,20 @@ let serverConfig = {
     host: "localhost",
     port: 3000,
     config: webpackConfig,
-    // hotClient: {
-    //     logLevel: "error"
-    // },
-    // logLevel: "debug",
+    hotClient: {
+        logLevel: "error"
+    },
+    logLevel: "debug",
     // add: (app, middleware, options) => {
-    //     app.use(convert(proxy('/v0/**', {
-    //         target: "https://api-staging.onerx.com",
+    //     app.use(convert(proxy(
+    //     'API_PATH_TO_SEARCH', {
+    //         target: API_URL,
     //         changeOrigin: true
     //     })));
     //     app.use(convert(history()));
     // },
     on: {
-        "Finished": (server) => {
+        "finished": (server) => {
             console.log(
                 util.inspect("Happy Coding!", {
                     colors: true,
