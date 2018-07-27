@@ -1,10 +1,8 @@
 const util = require("util");
 const serve = require("webpack-serve");
 
-// ADD the packages below to use PROXY and HISTORY FALLBACK
-//
-// const convert = require('koa-connect');
-// const history = require('connect-history-api-fallback');
+const convert = require("koa-connect");
+const history = require("connect-history-api-fallback");
 // const proxy = require('http-proxy-middleware');
 
 const webpackConfig = require("./build-utils/webpack.base.js");
@@ -23,22 +21,26 @@ let serverConfig = {
     devMiddleware: {
         logLevel: "error"
     },
-    // add: (app, middleware, options) => {
-    //     app.use(convert(proxy(
-    //     'API_PATH_TO_SEARCH', {
-    //         target: API_URL,
-    //         changeOrigin: true
-    //     })));
-    //     app.use(convert(history()));
-    // },
+    add: (app, middleware, options) => {
+
+        // app.use(convert(proxy(
+        // 'API_PATH_TO_SEARCH', {
+        //     target: API_URL,
+        //     changeOrigin: true
+        // })));
+        app.use(convert(history()));
+
+    },
     on: {
-        "listening": (server) => {
+        listening: server => {
+
             console.log(
                 util.inspect(`Serving: http://${host}:${port}`, {
                     colors: true,
                     depth: 0
                 })
             );
+
         }
     }
 };

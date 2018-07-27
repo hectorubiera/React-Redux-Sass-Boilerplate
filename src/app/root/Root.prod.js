@@ -1,6 +1,7 @@
 import React, {Component} from "react";
 import {Provider} from "react-redux";
 import PropTypes from "prop-types";
+import {BrowserRouter} from "react-router-dom";
 
 import App from "../containers/App";
 /**
@@ -14,7 +15,9 @@ class Root extends Component {
 
         return (
             <Provider store={store}>
-                <App />
+                <BrowserRouter>
+                    <App />
+                </BrowserRouter>
             </Provider>
         );
 
