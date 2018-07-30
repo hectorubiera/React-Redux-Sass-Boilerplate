@@ -7,7 +7,7 @@ const miniCssExtractPlugin = require("mini-css-extract-plugin");
 const styleLintPlugin = require("stylelint-webpack-plugin");
 const cleanWebpackPlugin = require("clean-webpack-plugin");
 
-const webpackConfig = require("./webpack.config");
+const webpackConfig = require("./config");
 const webpackConfigFile = require(`./webpack.${process.env.MODE}`);
 
 module.exports = webpackMerge(webpackConfigFile, {
