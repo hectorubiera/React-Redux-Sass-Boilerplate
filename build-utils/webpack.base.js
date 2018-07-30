@@ -12,9 +12,7 @@ const webpackConfigFile = require(`./webpack.${process.env.MODE}`);
 
 module.exports = webpackMerge(webpackConfigFile, {
     mode: process.env.MODE,
-    entry: [
-        `${webpackConfig.SOURCE_FOLDER}/app/index.js`
-    ],
+    entry: `${webpackConfig.SOURCE_FOLDER}/app/index.js`,
     output: {
         path: webpackConfig.BUILD_FOLDER,
         filename: process.env.MODE === "development" ?
