@@ -3,6 +3,7 @@ const path = require("path");
 const webpackMerge = require("webpack-merge");
 const htmlWebPackPlugin = require("html-webpack-plugin");
 const autoPrefixer = require("autoprefixer");
+const eyeglass = require("eyeglass");
 const miniCssExtractPlugin = require("mini-css-extract-plugin");
 const styleLintPlugin = require("stylelint-webpack-plugin");
 const cleanWebpackPlugin = require("clean-webpack-plugin");
@@ -70,10 +71,15 @@ module.exports = webpackMerge(webpackConfigFile, {
                 },
                 {
                     loader: "sass-loader",
-                    options: {
+                    options: eyeglass({
+                        errLogToConsole: true,
+                        outputStyle: "expanded",
+                        includePaths: "../node_modules",
                         sourceMap: true,
-                        sourceMapContents: true
-                    }
+                        eyeglass: {
+                            enableImportOnce: false
+                        }
+                    })
                 }
             ]
         },
