@@ -17,10 +17,6 @@ let serverConfig = {
     hotClient: {
         logLevel: "error"
     },
-    logLevel: "error",
-    devMiddleware: {
-        logLevel: "error"
-    },
     add: (app, middleware, options) => {
 
         // app.use(convert(proxy(
@@ -30,18 +26,6 @@ let serverConfig = {
         // })));
         app.use(convert(history()));
 
-    },
-    on: {
-        listening: server => {
-
-            console.log(
-                util.inspect(`Serving: http://${host}:${port}`, {
-                    colors: true,
-                    depth: 0
-                })
-            );
-
-        }
     }
 };
 
