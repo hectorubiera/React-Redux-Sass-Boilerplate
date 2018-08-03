@@ -229,9 +229,9 @@
         "padded-blocks": [
             1,
             {
-                "blocks": "always",
+                "blocks": "never",
                 "classes": "always",
-                "switches": "always"
+                "switches": "never"
             }
         ],
         "quote-props": 0,
