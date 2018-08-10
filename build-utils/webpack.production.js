@@ -11,15 +11,13 @@ module.exports = {
                     parallel: true,
                     sourcemap: true,
                     compress: {
-                        inline: false
+                        inline: false,
+                        dead_code: true,
+                        drop_console: true
                     },
                     ecma: 6,
                     output: {
                         comments: false
-                    },
-                    compress: {
-                        dead_code: true,
-                        drop_console: true
                     }
                 }
             }),
