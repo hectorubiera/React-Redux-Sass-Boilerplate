@@ -1,6 +1,3 @@
-const path = require("path");
-const webpack = require("webpack");
-const merge = require("webpack-merge");
 const uglifyJsPlugin = require("uglifyjs-webpack-plugin");
 const optimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 
@@ -34,18 +31,11 @@ module.exports = {
                 default: false,
                 commons: {
                     test: /[\\/]node_modules[\\/]/,
-                    name: 'vendor_app',
-                    chunks: 'all',
+                    name: "vendor_app",
+                    chunks: "all",
                     minChunks: 2
                 }
             }
         }
-    },
-    plugins: [
-        new webpack.DefinePlugin({
-            "process.env": {
-                NODE_ENV: JSON.stringify("production")
-            }
-        })
-    ]
+    }
 };

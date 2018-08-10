@@ -10,7 +10,6 @@ import App from "../containers/App";
 class Root extends Component {
 
     render() {
-
         const {store} = this.props;
 
         return (
@@ -20,7 +19,6 @@ class Root extends Component {
                 </BrowserRouter>
             </Provider>
         );
-
     }
 
 }

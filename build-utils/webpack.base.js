@@ -104,9 +104,7 @@ module.exports = webpackMerge(webpackConfigFile, {
                             ? "css/fonts/[name].[ext]"
                             : "css/fonts/[name].[hash:7].[ext]",
                     publicPath(url) {
-
                         return url.replace("css/", "");
-
                     }
                 }
             },
@@ -143,27 +141,33 @@ module.exports = webpackMerge(webpackConfigFile, {
         ]
     },
     plugins: [
+        // Deletes the files from the build folder
         new cleanWebpackPlugin([webpackConfig.BUILD_FOLDER], {
             root: path.resolve(__dirname, "..")
         }),
 
+        // Generates the index.html page for the app to use
         new htmlWebPackPlugin({
             inject: false,
             template: require("html-webpack-template"),
             appMountId: "main-app-wrapper"
         }),
 
+        // Lints the SCSS files
         new styleLintPlugin({
             configFile: path.resolve(__dirname, "..", ".stylelintrc"),
             failOnError: process.env.MODE === "development" ? false : true
         }),
 
+        // Generate an external CSS file in production build
         new miniCssExtractPlugin({
             filename: `css/${webpackConfig.CSS_FILE_NAME}.[hash:7].css`
         }),
 
+        // Defines variables that can be used in your app
         new webpack.DefinePlugin({
-            _DEVTOOL: process.env.DEVTOOL
+            _DEVTOOL: process.env.DEVTOOL,
+            NODE_ENV: JSON.stringify(process.env.MODE)
         })
     ]
 });

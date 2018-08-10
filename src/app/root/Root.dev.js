@@ -9,7 +9,6 @@ import DevTools from "../devtools";
 class Root extends Component {
 
     render() {
-
         const {store} = this.props;
 
         return (
@@ -20,7 +19,6 @@ class Root extends Component {
                 </BrowserRouter>
             </Provider>
         );
-
     }
 
 }
