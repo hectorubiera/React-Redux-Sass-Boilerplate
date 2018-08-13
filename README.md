@@ -6,13 +6,14 @@ Description
 
 **This boilerplate features all the latest tools**
 
--   React.js - **React 16**, React Router 4
--   Redux.js - Redux immutable and Reselect
--   Babel
--   Webpack
--   Test - Jest with Enzyme
--   Lint - Eslint, Stylelint
--   Styles - SCSS Styling
+-   **React.js** - React 16
+-   **React Router 4** - Navigational components that offers declarative routing
+-   **Redux.js** - Redux is a predictable state container for JavaScript apps
+-   **Babel** - ES6, Airbnb
+-   **Webpack 4** - Code Splitting, Optimized Prod Build and more
+-   **Test** - Jest with Enzyme
+-   **Lint** - Eslint, Stylelint
+-   **Styles** - SCSS Styling
 
 ## Getting Started
 
