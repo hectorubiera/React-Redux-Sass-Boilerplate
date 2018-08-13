@@ -1,2 +1,1 @@
-# webpack-config
-Webpack config boilers
+# REACT REDUX BOILERPLATE
