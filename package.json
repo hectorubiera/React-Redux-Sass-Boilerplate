@@ -1,7 +1,7 @@
 {
-    "name": "webpack-config",
+    "name": "react-redux-sass-boilerplate",
     "version": "1.0.0",
-    "description": "Webpack config to use in any project, comes with a dev server",
+    "description": "React Redux SASS Boilerplate to use in any project, comes with a dev server",
     "main": "index.js",
     "scripts": {
         "serve": "MODE=development DEVTOOL=false node ./webpack.serve.js",
@@ -20,19 +20,18 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/3in1media/webpack-config.git"
+        "url": "git+https://github.com/hectorubiera/React-Redux-Boilerplate.git"
     },
     "keywords": [
         "webpack",
-        "config",
         "webpack-serve"
     ],
-    "author": "3IN1MEDIA",
+    "author": "hectorubiera",
     "license": "ISC",
     "bugs": {
-        "url": "https://github.com/3in1media/webpack-config/issues"
+        "url": "https://github.com/hectorubiera/React-Redux-Boilerplate/issues"
     },
-    "homepage": "https://github.com/3in1media/webpack-config#readme",
+    "homepage": "https://github.com/hectorubiera/React-Redux-Boilerplate#readme",
     "devDependencies": {
         "autoprefixer": "^9.1.1",
         "babel": "^6.23.0",
