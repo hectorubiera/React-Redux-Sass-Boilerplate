@@ -1,8 +1,6 @@
 {
     "parser": "babel-eslint",
-    "plugins": [
-        "react"
-    ],
+    "plugins": ["react"],
     "env": {
         "es6": true,
         "browser": true,
@@ -15,17 +13,12 @@
             "jsx": true
         }
     },
-    "extends": [
-        "eslint:recommended",
-        "plugin:react/recommended"
-    ],
+    "extends": ["airbnb", "eslint:recommended", "plugin:react/recommended"],
     "rules": {
         "react/jsx-filename-extension": [
             1,
             {
-                "extensions": [
-                    ".js"
-                ]
+                "extensions": [".js"]
             }
         ],
         "comma-dangle": [
@@ -53,9 +46,7 @@
         "no-extra-parens": 0,
         "no-extra-semi": 1,
         "no-func-assign": 1,
-        "no-inner-declarations": [
-            1
-        ],
+        "no-inner-declarations": [1],
         "no-invalid-regexp": 1,
         "no-irregular-whitespace": 1,
         "no-negated-in-lhs": 1,
@@ -157,28 +148,19 @@
         "no-restricted-modules": 0,
         "no-sync": 0,
         "array-bracket-spacing": 1,
-        "block-spacing": [
-            1,
-            "never"
-        ],
+        "block-spacing": [1, "never"],
         "brace-style": 1,
         "camelcase": 0,
         "comma-spacing": 1,
         "comma-style": 1,
-        "computed-property-spacing": [
-            1,
-            "never"
-        ],
+        "computed-property-spacing": [1, "never"],
         "consistent-this": 0,
         "eol-last": 1,
         "func-names": 0,
         "func-style": 0,
         "id-length": 0,
         "id-match": 0,
-        "indent": [
-            1,
-            4
-        ],
+        "indent": [1, 4],
         "jsx-quotes": 1,
         "key-spacing": [
             1,
@@ -190,14 +172,8 @@
         "lines-around-comment": 0,
         "max-depth": 0,
         "max-len": 0,
-        "max-nested-callbacks": [
-            1,
-            3
-        ],
-        "max-params": [
-            1,
-            8
-        ],
+        "max-nested-callbacks": [1, 3],
+        "max-params": [1, 8],
         "max-statements": 0,
         "new-cap": 0,
         "new-parens": 1,
@@ -238,22 +214,13 @@
         "require-jsdoc": 0,
         "semi-spacing": 0,
         "semi": 1,
-        "semi-style": [
-            1,
-            "last"
-        ],
+        "semi-style": [1, "last"],
         "sort-vars": 0,
         "space-after-keywords": 0,
         "space-before-blocks": 0,
-        "space-before-function-paren": [
-            1,
-            "never"
-        ],
+        "space-before-function-paren": [1, "never"],
         "space-before-keywords": 0,
-        "space-in-parens": [
-            1,
-            "never"
-        ],
+        "space-in-parens": [1, "never"],
         "space-infix-ops": 1,
         "space-return-throw-case": 0,
         "space-unary-ops": [
@@ -278,6 +245,9 @@
         "wrap-regex": 0,
         "func-call-spacing": 1,
         "keyword-spacing": 1,
-        "import/prefer-default-export": 0
+        "import/prefer-default-export": 0,
+        "react/jsx-indent": [1, 4],
+        "react/prefer-stateless-function": 0,
+        "react/forbid-prop-types": 0
     }
 }
