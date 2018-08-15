@@ -28,7 +28,7 @@ cd react-redux-boilerplate
 **Step 2: install all the necessary dependencies**
 
 ```
-npm install
+npm i
 ```
 
 **Step 3: Start the development server**
@@ -39,7 +39,7 @@ npm run serve
 
 ## Server
 
-This boilerplate is using `Webpack Serve` as the development server.
+This boilerplate is using `Webpack Serve` for the development server.
 
 To make any configuration changes. Go to the path below.
 
@@ -49,16 +49,70 @@ To make any configuration changes. Go to the path below.
 
 ## Linters
 
-This boiler plate runs `eslint`, `stylelint` everytime a user saves a `SASS`, `JS` file.
+This boilerplate runs `eslint`, `stylelint` everytime a user saves a `SASS`, `JS` file.
 
 To make any configuration changes. Go to the path below.
 
-```
-eslint: ./.eslintrc
+**eslint:** `./.eslintrc`
 
-stylelint: ./stylelintrc
-```
+**stylelint:** `./stylelintrc`
 
 ## Test
 
----
+To test your project run the commands below
+
+To run all tests
+
+```
+npm run test
+```
+
+To run all test and watch your code
+
+```
+npm run test:watch
+```
+
+To run all test and see the coverage
+
+```
+npm run test:coverage
+```
+
+To run a single test
+
+```
+npm run test:single <TEST NAME>
+```
+
+## Production build
+
+To get the production ready files, run the command below.
+
+```
+npm run build
+```
+
+The files will be generate to the `build` folder which is located at `./build`.
+
+## Development folder structure
+
+```
+├── src
+    ├── app
+       ├── components
+       ├── containers
+       ├── reducers
+       ├── root
+       ├── store
+       ├── index.js
+    ├── images
+    ├── sass
+       ├── base
+       ├── components
+       ├── config
+       ├── fonts
+       ├── mixins
+       ├── vendors
+       ├── styles.scss
+```
