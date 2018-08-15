@@ -1,6 +1,6 @@
 let loadedModule = null;
 
-if (process.env.NODE_ENV === "development" && _DEVTOOL) {
+if (process.env.NODE_ENV === "development") {
     loadedModule = require("./Root.dev.js");
 } else {
     loadedModule = require("./Root.prod.js");

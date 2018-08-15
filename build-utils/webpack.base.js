@@ -166,7 +166,6 @@ module.exports = webpackMerge(webpackConfigFile, {
 
         // Defines variables that can be used in your app
         new webpack.DefinePlugin({
-            _DEVTOOL: process.env.DEVTOOL,
             NODE_ENV: JSON.stringify(process.env.MODE)
         })
     ]
