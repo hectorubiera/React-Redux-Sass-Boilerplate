@@ -100,7 +100,6 @@
         "selector-list-comma-newline-before": ["never-multi-line", {"severity": "warning"}],
         "selector-list-comma-space-after": ["never-single-line", {"severity": "warning"}],
         "selector-list-comma-space-before": ["never", {"severity": "warning"}],
-        "rule-empty-line-before": ["always", {"severity": "warning"}],
         "media-feature-colon-space-after": ["always", {"severity": "warning"}],
         "media-feature-colon-space-before": ["never", {"severity": "warning"}],
         "media-feature-name-case": ["lower", {"severity": "warning"}],
