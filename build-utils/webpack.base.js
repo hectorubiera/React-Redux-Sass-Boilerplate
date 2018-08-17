@@ -101,7 +101,7 @@ module.exports = webpackMerge(webpackConfigFile, {
                 options: {
                     name:
                         process.env.MODE === "development"
-                            ? "css/fonts/[name].[ext]"
+                            ? "fonts/[name].[ext]"
                             : "css/fonts/[name].[hash:7].[ext]",
                     publicPath(url) {
                         return url.replace("css/", "");
