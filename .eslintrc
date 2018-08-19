@@ -251,7 +251,7 @@
         "react/forbid-prop-types": 0,
         "react/jsx-indent-props": [1, 4],
         "react/button-has-type": 1,
-        "react/destructuring-assignment": 1,
+        "react/destructuring-assignment": 0,
         "import/no-dynamic-require": 0,
         "import/no-extraneous-dependencies": 0
     }
