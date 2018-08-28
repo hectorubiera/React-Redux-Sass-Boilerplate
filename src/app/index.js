@@ -6,7 +6,4 @@ import Root from "./root";
 
 const store = configureStore();
 
-ReactDOM.render(
-    <Root store={store} />,
-    document.getElementById("main-app-wrapper")
-);
+ReactDOM.render(<Root store={store} />, document.getElementById(APP_WRAPPER));

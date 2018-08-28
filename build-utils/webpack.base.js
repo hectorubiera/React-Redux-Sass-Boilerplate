@@ -8,7 +8,9 @@ const miniCssExtractPlugin = require("mini-css-extract-plugin");
 const styleLintPlugin = require("stylelint-webpack-plugin");
 const cleanWebpackPlugin = require("clean-webpack-plugin");
 
-const webpackConfig = require("./config");
+const webpackConfig = require("./webpack.config");
+const htmlConfig = require("./html.config");
+
 const webpackConfigFile = require(`./webpack.${process.env.MODE}`);
 
 module.exports = webpackMerge(webpackConfigFile, {
@@ -148,11 +150,7 @@ module.exports = webpackMerge(webpackConfigFile, {
         }),
 
         // Generates the index.html page for the app to use
-        new htmlWebPackPlugin({
-            inject: false,
-            template: require("html-webpack-template"),
-            appMountId: "main-app-wrapper"
-        }),
+        new htmlWebPackPlugin(htmlConfig),
 
         // Lints the SCSS files
         new styleLintPlugin({
@@ -167,7 +165,8 @@ module.exports = webpackMerge(webpackConfigFile, {
 
         // Defines variables that can be used in your app
         new webpack.DefinePlugin({
-            NODE_ENV: JSON.stringify(process.env.MODE)
+            NODE_ENV: JSON.stringify(process.env.MODE),
+            APP_WRAPPER: JSON.stringify(htmlConfig.appMountId)
         })
     ]
 });
