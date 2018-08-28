@@ -14,6 +14,7 @@ const webpackConfigFile = require(`./webpack.${process.env.MODE}`);
 module.exports = webpackMerge(webpackConfigFile, {
     mode: process.env.MODE,
     entry: [
+        "@babel/polyfill",
         `${webpackConfig.SOURCE_FOLDER}/app/index.js`,
         `${webpackConfig.SOURCE_FOLDER}/sass/styles.scss`
     ],

@@ -4,6 +4,6 @@ import rootReducer from "../reducers";
 
 const finalCreateStore = compose(applyMiddleware(thunk))(createStore);
 
-module.exports = function configureStore(initialState) {
+export default function configureStore(initialState) {
     return finalCreateStore(rootReducer, initialState);
-};
+}

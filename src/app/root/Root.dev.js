@@ -25,4 +25,4 @@ Root.propTypes = {
     store: PropTypes.object.isRequired
 };
 
-module.exports = Root;
+export default Root;

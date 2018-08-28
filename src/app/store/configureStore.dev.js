@@ -7,7 +7,7 @@ const logger = createLogger();
 
 const finalCreateStore = compose(applyMiddleware(logger, thunk))(createStore);
 
-module.exports = function configureStore(initialState) {
+export default function configureStore(initialState) {
     const store = finalCreateStore(rootReducer, initialState);
 
     if (module.hot) {
@@ -17,4 +17,4 @@ module.exports = function configureStore(initialState) {
     }
 
     return store;
-};
+}
