@@ -3,7 +3,7 @@ import React, { Component } from "react";
 class App extends Component {
 
     render() {
-        return <div>Simple Redux Boilerplate </div>;
+        return <div>React Redux Sass Boilerplate </div>;
     }
 
 }

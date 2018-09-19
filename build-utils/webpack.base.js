@@ -40,6 +40,10 @@ module.exports = webpackMerge(webpackConfigFile, {
                         options: {
                             fix: true,
                             failOnWarning: false,
+                            emitWarning:
+                                process.env.MODE === "development"
+                                    ? false
+                                    : true,
                             failOnError:
                                 process.env.MODE === "development"
                                     ? false
@@ -154,6 +158,7 @@ module.exports = webpackMerge(webpackConfigFile, {
 
         // Lints the SCSS files
         new styleLintPlugin({
+            emitWarning: process.env.MODE === "development" ? false : true,
             configFile: path.resolve(__dirname, "..", ".stylelintrc"),
             failOnError: process.env.MODE === "development" ? false : true
         }),

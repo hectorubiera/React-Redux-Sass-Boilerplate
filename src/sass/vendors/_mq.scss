@@ -13,9 +13,9 @@ $mq-responsive: true;
 /// @type Map
 /// @link https://github.com/sass-mq/sass-mq#seeing-the-currently-active-breakpoint Full documentation and examples
 $mq-breakpoints: (
-    mobile: $tru-mobile-width,
-    tablet: $tru-tablet-width,
-    desktop: $tru-desktop-width
+    mobile: $mobile-width,
+    tablet: $tablet-width,
+    desktop: $desktop-width
 );
 
 /// Static breakpoint (for fixed-width layouts)
