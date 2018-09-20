@@ -5,7 +5,6 @@
     "main": "index.js",
     "scripts": {
         "serve": "MODE=development node ./webpack.serve.js",
-        "serve:devtool": "MODE=development node ./webpack.serve.js",
         "test": "jest",
         "test:single": "jest -t",
         "test:watch": "jest --watch",
