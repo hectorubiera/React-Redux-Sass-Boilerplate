@@ -9,6 +9,7 @@ Description
 -   **React.js** - React 16
 -   **React Router 4** - Navigational components that offers declarative routing
 -   **Redux.js** - Redux is a predictable state container for JavaScript apps
+-   **Redux Saga** -  redux middleware library
 -   **Babel** - ES6
 -   **Webpack 4** - Code Splitting, Optimized Prod Build and more
 -   **Webpack Serve** - A lean, modern, and flexible webpack development server
@@ -104,6 +105,7 @@ The files will be generate to the `build` folder which is located at `./build`.
        ├── containers
        ├── reducers
        ├── root
+       ├── sagas
        ├── store
        ├── index.js
     ├── images
