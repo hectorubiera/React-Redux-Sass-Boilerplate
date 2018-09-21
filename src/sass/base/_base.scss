@@ -1,1 +1,7 @@
-// Base
+@import "../config/variables";
+
+body,
+html {
+    font-family: $open-sans;
+    font-weight: 400;
+}
