@@ -1,10 +1,8 @@
-import { all } from "redux-saga/effects";
+import { all, fork } from "redux-saga/effects";
 
 // List of all sagas
-import * as helloSaga from "./helloSaga";
+import { fetchingData } from "./fetchingData";
 
 export default function* rootSaga() {
-    yield all([
-        helloSaga
-    ]);
+    yield all([fork(fetchingData)]);
 }

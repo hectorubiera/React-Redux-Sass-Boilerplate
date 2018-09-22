@@ -92,6 +92,8 @@
     },
     "dependencies": {
         "@babel/polyfill": "^7.0.0",
+        "axios": "^0.18.0",
+        "bootstrap-4-react": "0.0.54",
         "prop-types": "^15.6.2",
         "react": "^16.5.2",
         "react-dom": "^16.5.2",
