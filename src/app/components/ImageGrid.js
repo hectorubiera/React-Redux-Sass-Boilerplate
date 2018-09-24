@@ -9,13 +9,24 @@ const ImageGrid = props => {
 
     const { images } = props;
 
+    // style={{
+    //     background: `url(${path})`,
+    //     backgroundRepeat: "no-repeat",
+    //     backgroundSize: "100%",
+    //     marginTop: "30px"
+    // }}
+
     const grid = images.map(path => (
-        <Col
-            col="md-2"
-            key={path}
-            className="image-grid"
-            style={{ background: `url(${path})` }}
-        />
+            <Col
+                md={4}
+                sm={12}
+                key={path}
+                className="image-grid"
+            >
+            <img src={path} alt={path} />
+
+            </Col>
+
     ));
 
     return <Row style={rowStyle}>{grid}</Row>;
