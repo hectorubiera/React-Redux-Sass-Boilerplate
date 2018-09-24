@@ -1,8 +1,8 @@
 import { all, fork } from "redux-saga/effects";
 
 // List of all sagas
-import { fetchingData } from "./fetchingData";
+import { apiCallRequest } from "./apiCallRequest";
 
 export default function* rootSaga() {
-    yield all([fork(fetchingData)]);
+    yield all([fork(apiCallRequest)]);
 }

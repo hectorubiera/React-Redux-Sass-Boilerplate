@@ -3,33 +3,29 @@ import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import { Container, Row, Col, Button } from "bootstrap-4-react";
 
-import { fetchingData } from "../actions";
-import ImageGrid from "../components/ImageGrid";
+import { apiCallRequest } from "../actions";
+import CardElement from "../components/CardElement";
 
 class App extends Component {
 
     render() {
-        const { onRequestDogs, dogs, fetching } = this.props;
-
-        const rowStyle = {
-            marginTop: "5rem"
-        };
+        const { onRequestDogs, data, fetching } = this.props;
 
         return (
             <Container>
-                <Row style={rowStyle}>
+                <Row className="row-margin-top">
                     <Col col="md-12" text="center">
                         <h2>React Redux Sass Boilerplate</h2>
                     </Col>
                 </Row>
-                <Row style={rowStyle}>
+                <Row className="row-margin-top">
                     <Col col="md-12" text="center">
                         <Button primary lg onClick={onRequestDogs}>
-                            {fetching ? "Fetching..." : "Fetch Dog Pictures"}
+                            {fetching ? "Fetching..." : "Fetch Data"}
                         </Button>
                     </Col>
                 </Row>
-                {dogs ? <ImageGrid images={dogs} /> : null}
+                {data ? <CardElement data={data} /> : null}
             </Container>
         );
     }
@@ -37,28 +33,28 @@ class App extends Component {
 }
 
 App.defaultProps = {
-    dogs: null
+    data: null
 };
 
 App.propTypes = {
     onRequestDogs: PropTypes.func.isRequired,
-    dogs: PropTypes.array,
+    data: PropTypes.array,
     fetching: PropTypes.bool.isRequired
 };
 
 const mapStateToProps = state => {
-    const { fetching, dogs, error } = state.appReducer;
+    const { fetching, data, error } = state.appReducer;
 
     return {
         fetching: fetching,
-        dogs: dogs,
+        data: data,
         error: error
     };
 };
 
 const mapDispatchToProps = dispatch => {
     return {
-        onRequestDogs: () => dispatch(fetchingData())
+        onRequestDogs: () => dispatch(apiCallRequest())
     };
 };
 
