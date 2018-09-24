@@ -7,12 +7,13 @@ import rootSaga from "../sagas";
 
 const logger = createLogger();
 const sagaMiddleware = createSagaMiddleware();
-const reduxDevTools = window.__REDUX_DEVTOOLS_EXTENSION__
-    && window.__REDUX_DEVTOOLS_EXTENSION__();
 
-const finalCreateStore = compose(
-    applyMiddleware(logger, sagaMiddleware),
-    reduxDevTools
+const composeEnhancers = typeof window === "object" && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__
+    ? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__({})
+    : compose;
+
+const finalCreateStore = composeEnhancers(
+    applyMiddleware(logger, sagaMiddleware)
 )(createStore);
 
 export default function configureStore(initialState) {
