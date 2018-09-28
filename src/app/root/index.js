@@ -1,5 +1,28 @@
-if (process.env.NODE_ENV === "development") {
-    module.exports = require("./Root.dev.js");
-} else {
-    module.exports = require("./Root.prod.js");
+import React, { Component } from "react";
+import { Provider } from "react-redux";
+import PropTypes from "prop-types";
+import { BrowserRouter } from "react-router-dom";
+
+import App from "../containers/App";
+
+class Root extends Component {
+
+    render() {
+        const { store } = this.props;
+
+        return (
+            <Provider store={store}>
+                <BrowserRouter>
+                    <App />
+                </BrowserRouter>
+            </Provider>
+        );
+    }
+
 }
+
+Root.propTypes = {
+    store: PropTypes.object.isRequired
+};
+
+export default Root;
